@@ -4,9 +4,6 @@ include('header.php');
 ?>
 <main>
 <style>
-    main{
-        margin: 15px;
-    }
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -23,17 +20,21 @@ include('header.php');
     tr:nth-child(even) {
         background-color: #dddddd;
     }
-    .add a{
+    .them a{
         border: 1px solid red;
-        margin: 40px;
-        
+        margin: 15px;
+        padding: 15px;
         text-decoration: none;
+    }
+    .add{
+        margin-top: 40px;
     }
 </style>
 <div class="container">
         <div class="row add" >
-            <div class="add">
-            <a href="add-ds.php" ><i class="bi bi-person-plus-fill"></i>Thêm</a>
+            <div class="col-md-10"></div>
+            <div class="col-md-2 them">
+            <a href="them.php" ><i class="bi bi-person-plus-fill"></i>Thêm</a>
             </div>
             
         </div>
@@ -60,6 +61,7 @@ include('header.php');
                     if (mysqli_num_rows($result) > 0) {
                         // output data of each row
                         while ($row = mysqli_fetch_assoc($result)) {
+                           
                             echo '<tr>';
                             echo '<td>'.$row["bd_id"].'</td>';
                             echo '<td>'.$row["bd_name"].'</td>';
@@ -68,9 +70,14 @@ include('header.php');
                             echo '<td>'.$row["bd_bgroup"].'</td>';
                             echo '<td>'.$row["bd_reg_date"].'</td>';
                             echo '<td>'.$row["bd_phno"].'</td>';
-                            echo '<td><a href="edit-ds.php" ><i class="bi bi-pencil-square"></i>Sửa</a></td>';
-                            echo '<td><a href="delete-ds.php?id='.$row["bd_id"].'" ><i class="bi bi-trash"></i>Xóa</a></td>';
+                            // echo '<td><a href="" ><i class="bi bi-emoji-heart-eyes"></i>Sửa</a></td>';
+                            // echo '<td><a href="xoa.php?id='.$row["bd_id"].'" ><i class="bi bi-trash-fill"></i>Xóa</a></td>';
+                        
+
+
                             echo '</tr>';
+                            echo '<br>';
+                            
                         }
                     } else {
                         echo "0 results";

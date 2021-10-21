@@ -4,9 +4,6 @@ include('header.php');
 ?>
 <main>
 <style>
-    main{
-        margin: 15px;
-    }
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -68,8 +65,8 @@ include('header.php');
                             echo '<td>'.$row["bd_bgroup"].'</td>';
                             echo '<td>'.$row["bd_reg_date"].'</td>';
                             echo '<td>'.$row["bd_phno"].'</td>';
-                            echo '<td><a href="edit-ds.php" ><i class="bi bi-pencil-square"></i>Sửa</a></td>';
-                            echo '<td><a href="delete-ds.php?id='.$row["bd_id"].'" ><i class="bi bi-trash"></i>Xóa</a></td>';
+                            // echo '<td><a href="" ><i class="bi bi-emoji-heart-eyes"></i>Sửa</a></td>';
+                            // echo '<td><a href="xoa.php?id='.$row["bd_id"].'" ><i class="bi bi-trash-fill"></i>Xóa</a></td>';
                             echo '</tr>';
                         }
                     } else {
